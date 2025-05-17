@@ -1,0 +1,53 @@
+name: Generate and Deploy Output File
+
+on:
+  schedule:
+    - cron: '30 2 * * *'   # 2 AM UTC
+  workflow_dispatch:
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout master branch
+        uses: actions/checkout@v4
+        with:
+          ref: master
+
+      - name: Checkout gh-pages branch
+        uses: actions/checkout@v4
+        with:
+          ref: gh-pages
+          path: gh-pages
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        working-directory: ./src
+        run: npm ci
+
+      - name: Run generate calendar script
+        id: calendar_generator
+        working-directory: ./src
+        run: node index.js
+        continue-on-error: true
+
+      - name: Debug outcome
+        run: | 
+          echo "calendar_generator.outcome=${{ steps.calendar_generator.outcome }}"
+          echo "calendar_generator.outcome=${{ steps.calendar_generator.outcome == 'success' }}"
+
+      - name: Commit and push if calendar updated
+        if: steps.calendar_generator.outcome == 'success'
+        run: |
+          cp 2025_riccarton_c_game_calendar.ics gh-pages/2025_riccarton_c_game_calendar.ics
+          cd gh-pages
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add 2025_riccarton_c_game_calendar.ics
+          git commit -m "Update calendar file"
+          git push origin gh-pages
