@@ -102,8 +102,9 @@ export const createIcsFromFixtures = (fixtures, calendarName) => {
     calendarBuilder.addEvent(event => {
       event.id = fixture.Id;
       event.summary = buildSummary(fixture);
-      event.from = new Date(fixture.From).toISOString().replace(/[-:]/g, '').split('.')[0] + 'Z';;
-      event.to = new Date(fixture.To).toISOString().replace(/[-:]/g, '').split('.')[0] + 'Z';;
+      const nzOffset = '+12:00'; // adjust this manually if needed (DST-aware logic is better)
+      event.from = new Date(fixture.From + nzOffset).toISOString().replace(/[-:]/g, '').split('.')[0] + 'Z';
+      event.to = new Date(fixture.To + nzOffset).toISOString().replace(/[-:]/g, '').split('.')[0] + 'Z';
       event.desc = fixture.VenueName
       event.location = fixture.VenueAddress ?? '';
     });
