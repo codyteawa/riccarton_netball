@@ -60,4 +60,12 @@ DTEND:20250628T010000Z
 LOCATION:Hagley Ave, Christchurch Central, Christchurch, 8011
 DESCRIPTION:Christchurch Netball Centre: 8
 END:VEVENT
+BEGIN:VEVENT
+UID:5647624
+SUMMARY:Knights Whero Senior vs Riccarton C
+DTSTART:20250712T010000Z
+DTEND:20250712T020000Z
+LOCATION:Hagley Ave, Christchurch Central, Christchurch, 8011
+DESCRIPTION:Christchurch Netball Centre: 3
+END:VEVENT
 END:VCALENDAR
