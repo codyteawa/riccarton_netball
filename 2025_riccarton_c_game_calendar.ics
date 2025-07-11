@@ -68,4 +68,36 @@ DTEND:20250712T020000Z
 LOCATION:Hagley Ave, Christchurch Central, Christchurch, 8011
 DESCRIPTION:Christchurch Netball Centre: 3
 END:VEVENT
+BEGIN:VEVENT
+UID:5647628
+SUMMARY:Independent - Independent vs Riccarton C
+DTSTART:20250719T010000Z
+DTEND:20250719T020000Z
+LOCATION:Hagley Ave, Christchurch Central, Christchurch, 8011
+DESCRIPTION:Christchurch Netball Centre: 4
+END:VEVENT
+BEGIN:VEVENT
+UID:5647630
+SUMMARY:Riccarton C vs Halswell - Halswell Whero
+DTSTART:20250726T010000Z
+DTEND:20250726T020000Z
+LOCATION:Hagley Ave, Christchurch Central, Christchurch, 8011
+DESCRIPTION:Christchurch Netball Centre: 3
+END:VEVENT
+BEGIN:VEVENT
+UID:5647632
+SUMMARY:Riccarton C vs Marist X
+DTSTART:20250802T000000Z
+DTEND:20250802T010000Z
+LOCATION:Hagley Ave, Christchurch Central, Christchurch, 8011
+DESCRIPTION:Christchurch Netball Centre: 12
+END:VEVENT
+BEGIN:VEVENT
+UID:5647635
+SUMMARY:Sumner Redcliffs - A vs Riccarton C
+DTSTART:20250809T000000Z
+DTEND:20250809T010000Z
+LOCATION:Hagley Ave, Christchurch Central, Christchurch, 8011
+DESCRIPTION:Christchurch Netball Centre: 12
+END:VEVENT
 END:VCALENDAR
